@@ -1,0 +1,7 @@
+bitsandbytes
+datasets
+evaluate
+peft
+tensorboard
+transformers
+trl
