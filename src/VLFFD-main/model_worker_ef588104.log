@@ -1,0 +1,73 @@
+2025-06-06 15:00:41 | ERROR | stderr | model-00001-of-00002.safetensors:   0%|                                 | 0.00/2.04G [00:00<?, ?B/s]
+2025-06-06 15:00:48 | ERROR | stderr | model-00001-of-00002.safetensors:   0%|                        | 777k/2.04G [00:07<5:28:32, 103kB/s]
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]: Traceback (most recent call last):
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 627, in xet_get
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     download_files(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]: KeyboardInterrupt
+2025-06-06 15:00:55 | ERROR | stderr | 
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]: During handling of the above exception, another exception occurred:
+2025-06-06 15:00:55 | ERROR | stderr | 
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]: Traceback (most recent call last):
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return _run_code(code, main_globals, None,
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/runpy.py", line 86, in _run_code
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     exec(code, run_globals)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/fastchat/serve/vllm_worker.py", line 290, in <module>
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     engine = AsyncLLMEngine.from_engine_args(engine_args)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/engine/async_llm_engine.py", line 680, in from_engine_args
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return async_engine_cls.from_vllm_config(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/engine/async_llm_engine.py", line 653, in from_vllm_config
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return cls(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/engine/async_llm_engine.py", line 608, in __init__
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self.engine = self._engine_class(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/engine/async_llm_engine.py", line 267, in __init__
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     super().__init__(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/engine/llm_engine.py", line 281, in __init__
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self.model_executor = executor_class(vllm_config=vllm_config, )
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/executor/executor_base.py", line 286, in __init__
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     super().__init__(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/executor/executor_base.py", line 52, in __init__
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self._init_executor()
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/executor/mp_distributed_executor.py", line 125, in _init_executor
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self._run_workers("load_model",
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/executor/mp_distributed_executor.py", line 185, in _run_workers
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     driver_worker_output = run_method(self.driver_worker, sent_method,
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/utils.py", line 2347, in run_method
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return func(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/worker/cpu_worker.py", line 233, in load_model
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self.model_runner.load_model()
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/worker/cpu_model_runner.py", line 491, in load_model
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     self.model = get_model(vllm_config=self.vllm_config)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/__init__.py", line 14, in get_model
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return loader.load_model(vllm_config=vllm_config)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 444, in load_model
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     loaded_weights = model.load_weights(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/models/qwen.py", line 306, in load_weights
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     for name, loaded_weight in weights:
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 420, in _get_all_weights
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     yield from self._get_weights_iterator(primary_weights)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 348, in _get_weights_iterator
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     hf_folder, hf_weights_files, use_safetensors = self._prepare_weights(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 301, in _prepare_weights
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     hf_folder = download_weights_from_hf(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 270, in download_weights_from_hf
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     hf_folder = snapshot_download(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return fn(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/_snapshot_download.py", line 325, in snapshot_download
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     _inner_hf_hub_download(file)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/_snapshot_download.py", line 301, in _inner_hf_hub_download
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return hf_hub_download(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return fn(*args, **kwargs)
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1008, in hf_hub_download
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     return _hf_hub_download_to_cache_dir(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     _download_to_tmp_and_move(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1710, in _download_to_tmp_and_move
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     xet_get(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:   File "/Users/charon/miniconda3/envs/llm/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 627, in xet_get
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]:     download_files(
+2025-06-06 15:00:55 | ERROR | stderr | [rank0]: KeyboardInterrupt
+2025-06-06 15:00:55 | ERROR | stderr | model-00001-of-00002.safetensors:   0%|                      | 777k/2.04G [00:14<10:19:31, 54.8kB/s]
+2025-06-06 15:00:55 | ERROR | stderr | 
